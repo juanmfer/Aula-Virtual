@@ -6,15 +6,15 @@ import java.util.ArrayList;
 
 
 public class AulaVirtual {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		ArrayList<ClasePersonas> listaTodos = new ArrayList<>();
-		String dniStr, dniBusqueda, TipoProfesor,TipoAlumno,enEdicion,Tipo = null;
-		TipoProfesor = "Profesor";
-		TipoAlumno = "Alumno";
-		//listaTodos.add(new ClasePersonas("Juan", 1, "Ingeniería", "Facultad de Ciencias", TipoAlumno));
+    public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+	ArrayList<ClasePersonas> listaTodos = new ArrayList<>();
+	String dniStr, dniBusqueda, TipoProfesor,TipoAlumno,enEdicion,Tipo = null;
+	TipoProfesor = "Profesor";
+	TipoAlumno = "Alumno";
+	//listaTodos.add(new ClasePersonas("Juan", 1, "Ingeniería", "Facultad de Ciencias", TipoAlumno));
         //listaTodos.add(new ClasePersonas("jose", 2, "Ciencias de la Computación", "Facultad de Tecnología", TipoProfesor));
-		System.out.print("\u001b[H\u001b[2J");
+	System.out.print("\u001b[H\u001b[2J");
         String opcionIngresar,opcionEditarProfesor;
         System.out.println("Aula Virtual - ESBA");
         System.out.println("Registro y modificacion de Alumnos y Profesores\n");
