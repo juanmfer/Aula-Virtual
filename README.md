@@ -1,1 +1,2 @@
 # Aula-Virtual
+Este programa en Java simula la creación de perfiles de profesores y alumnos, permitiendo ingresar y almacenar información detallada, como nombres, números de identificación (DNI), facultades, carreras, legajo y las materias que los alumnos cursan o los profesores enseñan. Una herramienta útil para gestionar datos académicos y facilitar el seguimiento de profesores y alumnos en una institución educativa
