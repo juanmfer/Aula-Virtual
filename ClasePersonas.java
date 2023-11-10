@@ -1,8 +1,9 @@
-
+package EsbaAulaVirtual;
 
 import java.util.ArrayList;
 
 public class ClasePersonas {
+	//variables
 	private String nombre;
     private long dni;
     private String carrera;
@@ -11,109 +12,89 @@ public class ClasePersonas {
     private ArrayList<String> materias;
     private String tipo; // alumno o profesor
     
+    // variable LegajoSum, es unica para cada alumno y profesor, y se suma cada vez que se crea un alumno o profesor
     private static int legajoSum = 0;
-
+    
+    // constructor
 	public ClasePersonas(String nombre,long dni,String carrera,String facultad,String tipo) {
 		this.nombre = nombre;
 		this.dni = dni;
 		this.carrera = carrera;
 		this.facultad = facultad;
 		this.legajo = ++legajoSum; //al crear un alumno nuevo, se incrementa su legajo en 1.
-		this.materias = new ArrayList<>(); // inicializamos el arreglo materias vacio
-		this.tipo = tipo;
+		this.materias = new ArrayList<>(); // inicializamos el arraylist materias vacio
+		this.tipo = tipo; // alumno o profesor
 	}
-	public String getNombre() {
+	
+	//getter y setter
+	
+	public String getNombre() { // retorna el nombre para el alumno o profesor
         return nombre;
     }
-	public void setNombre(String nombre) {
+	public void setNombre(String nombre) { // setea el nombre para el alumno o profesor
         this.nombre = nombre;
     }
-	//  metodos get y set para el dni de la persona
-    public long getDni() {
+	
+    public long getDni() { // retorna el DNI para el alumno o profesor
         return dni;
     }
-    public void setDni(long dni) {
+    public void setDni(long dni) { // setea el DNI para el alumno o profesor
         this.dni = dni;
     }
-    // metodos get y set para la carrera de la persona
-    public String getCarrera() {
+    
+    public String getCarrera() { // retorna la carrera para el alumno o profesor
         return carrera;
     }
-    public void setCarrera(String carrera) {
+    public void setCarrera(String carrera) { // setea la carrera para el alumno o profesor
         this.carrera = carrera;
     }
-    // metodos get y set para la facultad de la persona
-    public String getFacultad() {
+
+    public String getFacultad() { // retorna la facultad para el alumno o profesor
         return facultad;
     }
-    public void setFacultad(String facultad) {
+    public void setFacultad(String facultad) { // setea el nombre de la facultad para el alumno o profesor
         this.facultad = facultad;
     }
     
     // metodo get legajo
-    public int getLegajo() {
+    public int getLegajo() { // retorna el legajo del profesor o alumno
     	return legajo;    
     }
     
-    public ArrayList<String> getMaterias() {
+    public ArrayList<String> getMaterias() { // retorna las materias para un alumno o profesor en particular
         return materias;
     }
-    public void setModMaterias(int numM,String MateriaMod) {
-    	this.materias.set(numM, MateriaMod);
+    public void setModMaterias(int numM,String MateriaMod) { // modifica las materias dentro del arraylist
+    	this.materias.set(numM, MateriaMod); // numM es el indice del arraylist a modificar y MateriaMod es el nuevo nombre
     }
-    public void setMaterias(ArrayList<String> materias) {
+    public void setMaterias(ArrayList<String> materias) { // setea materias para un alumno o profesor en particular
         this.materias = materias;
     }
-    public void agregarMateriaP(String materia) {
+    public void agregarMateriaP(String materia) { // agrega materia al arreglo materias
     	this.materias.add(materia);
     }
-    public int getMateriasP() {
+    public int getMateriasP() { // devuelve cantidad de elementos en un arreglo dinamico como arraylist
     	return this.materias.size();
     }
-    public void delMaterias(int nuM) {
+    public void delMaterias(int nuM) { // elimina materia
     	this.materias.remove(nuM);
     }
-    // metodos get y set para el tipo de persona - alumno o profesor
-    public void SetTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    public String getTipo() {
+
+    public String getTipo() { // devuelve el tipo, si es alumno o profesor
     	return tipo;
     }
+    // info para alumno o profesor
     public void info() {
         System.out.print(tipo+" Nombre: " + nombre + "\n");
         System.out.print("DNI: " + dni + "\n");
         System.out.print("Legajo n°: " +legajo+ "\n");
-        System.out.print("Cursando la/s materia/s: \n");
+        if(tipo == "Alumno") {
+        	System.out.print("Cursando la/s materia/s: \n");
+        } else if(tipo == "Profesor") {
+        	System.out.print("Enseñando la/s materia/s: \n");
+        }
         for (int mates = 0; mates < materias.size(); ++mates) {
             System.out.println("   " + mates + ": " + materias.get(mates));
         }
     }
-    public void info2() {
-        System.out.print(tipo+" Nombre: " + nombre + "\n");
-        System.out.print("DNI: " + dni + "\n");
-        System.out.print("Legajo n°: " +legajo+ "\n");
-        System.out.print("Enseñando la/s materia/s \n");
-        for (int mates = 0; mates < materias.size(); ++mates) {
-            System.out.println("   " + mates + ": " + materias.get(mates));
-        }
-    } 
- // metodo para agregar una materia al profesor
-    public void agregarMateriaA(String materia) {
-        materias.add(materia);
-    }
-    
-    
-    
-    
-    
-	
-	
-	
-	
-	
-
 }
