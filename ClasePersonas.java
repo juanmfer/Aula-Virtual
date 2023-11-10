@@ -1,5 +1,3 @@
-package EsbaAulaVirtual;
-
 import java.util.ArrayList;
 
 public class ClasePersonas {
